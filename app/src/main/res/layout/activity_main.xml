@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculadora de Imposto de Renda"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/editSalario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Salário (R$)"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/textTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
+        />
+
+    <TextView
+        android:id="@+id/textSalario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salário mensal"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/editSalario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/editGastos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Gastos (R$)"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/editSalario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="75dp"
+
+        />
+
+    <TextView
+        android:id="@+id/textGastos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gastos com saúde e educação"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/editGastos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/editDependentes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Dependentes"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/editGastos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="75dp"
+        />
+
+    <TextView
+        android:id="@+id/textDependentes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nº de dependentes"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/editDependentes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+    <TextView
+        android:id="@+id/textResposta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEU IMPOSTO DE RENDA MENSAL:"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/textDependentes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
+        />
+
+    <TextView
+        android:id="@+id/textValor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="R$ 0"
+        android:textColor="@color/blue"
+        android:textAlignment="center"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textResposta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        />
+
+    <Button
+        android:id="@+id/buttonCalcular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="CALCULAR"
+        android:backgroundTint="@color/limegreen"
+        app:layout_constraintTop_toBottomOf="@id/textValor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
