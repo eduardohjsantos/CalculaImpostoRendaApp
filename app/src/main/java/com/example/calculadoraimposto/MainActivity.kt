@@ -21,10 +21,45 @@ class MainActivity : AppCompatActivity() {
         val textValor = findViewById<TextView>(R.id.textValor)
 
         buttonCalcular.setOnClickListener{
+
             try{
-                val salario = editSalario.text.toString().toFloat()
-                val gastos = editGastos.text.toString().toFloat()
-                val dependentes = editDependentes.text.toString().toInt()
+
+                val salario = editSalario.text.toString().toFloatOrNull()
+                val gastos = editGastos.text.toString().toFloatOrNull()
+                val dependentes = editDependentes.text.toString().toIntOrNull()
+
+
+                if (salario == null) {
+                    Toast.makeText(applicationContext, "Por favor, preencha o campo Salário.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                if (gastos == null) {
+                    Toast.makeText(applicationContext, "Por favor, preencha o campo Gastos.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                if (dependentes == null) {
+                    Toast.makeText(applicationContext, "Por favor, preencha o campo Dependentes.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+
+
+                if(salario == 0f){
+                    Toast.makeText(applicationContext,"Por favor, preencha o salário com um valor maior do que zero",Toast.LENGTH_SHORT).show()
+                }
+
+                if (salario < 0 || gastos < 0) {
+                    Toast.makeText(applicationContext, "Salário e gastos não podem ser valores negativos.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                if (dependentes < 0) {
+                    Toast.makeText(applicationContext, "O número de dependentes não pode ser negativo.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+
+                if (gastos > salario) {
+                    Toast.makeText(applicationContext, "Os gastos não podem ser maiores que o salário.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
 
                 val deducaoPorDependente = 189.59f
                 val baseCalculo = salario - (dependentes * deducaoPorDependente) - gastos
@@ -41,7 +76,6 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext,"Imposto de Renda Calculado com Sucesso!",Toast.LENGTH_SHORT).show()
             } catch (e: Exception){
                 Toast.makeText(applicationContext,"Falha em Calcular!",Toast.LENGTH_SHORT).show()
-                e.printStackTrace()
             }
         }
 

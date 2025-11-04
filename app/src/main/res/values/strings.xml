@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">calculadoraimposto</string>
+    <string name="app_title">Calculadora de Imposto de Renda</string>
+    <string name="hint_salario">Salário (R$)</string>
+    <string name="descricao_salario">Salário mensal</string>
+    <string name="hint_gastos">Gastos (R$)</string>
+    <string name="descricao_gastos">Gastos com saúde e educação</string>
+    <string name="hint_dependentes">Dependentes</string>
+    <string name="descricao_dependentes">Nº de dependentes</string>
+    <string name="saida_titulo">SEU IMPOSTO DE RENDA MENSAL:</string>
 </resources>
